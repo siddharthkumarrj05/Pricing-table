@@ -1,0 +1,581 @@
+
+body{
+    background-color: #042a572b;
+}
+
+@media (max-width: 980px) {
+	#pricing-cards {
+	}
+}
+.has-tooltip:not(.tooltip-disabled) {
+	cursor: help;
+	position: relative;
+}
+
+.has-tooltip:not(.tooltip-disabled):hover .tooltip-container {
+	display: block;
+}
+
+.has-tooltip .tooltip-container {
+	display: none;
+	position: absolute;
+	background-color: white;
+	z-index: 20;
+	bottom: calc(100% + 13px);
+	left: -10px;
+	right: -10px;
+	padding: 16px 20px;
+	border-radius: 8px;
+	box-shadow: 0 6px 55px -10px #777;
+}
+.has-tooltip .tooltip-container:after {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid white;
+	font-size: 0;
+	line-height: 0;
+	content: "";
+	position: absolute;
+	bottom: -10px;
+}
+
+.has-tooltip .tooltip-container h6 {
+	font-weight: 600;
+	font-size: 16px;
+	margin: 0px;
+}
+
+.has-tooltip .tooltip-container p {
+	color: #555;
+	margin-top: 4px;
+}
+
+#pricing-container * {
+	box-sizing: border-box;
+}
+
+#pricing-container {
+	font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	max-width: 1080px;
+	margin: 0 auto 50px;
+	justify-content: center;
+	line-height: 1;
+	color: #000;
+}
+
+/* Cards */
+
+#pricing-cards {
+	display: flex;
+	font-size: 14px;
+}
+
+#pricing-container .price-card {
+	background-color: white;
+	font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
+	display: block;
+	box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+	transition: all 0.25s;
+	position: relative;
+	margin: 0 6px;
+	flex-grow: 1;
+	flex-shrink: 1;
+    border-radius: 15px;
+}
+
+#pricing-container .price-card:hover {
+	transform: translateY(-5px);
+    box-shadow: 0px 0px 0px 3px #042a57;
+}
+.price-card:hover .price-card--cta--button{
+    background-color: #042a57 !important;
+    color: #ffffff !important;
+}
+
+#pricing-container .price-card--header {
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+    background: #042956;
+    border-radius: 15px 15px 0px 0px;
+}
+
+#pricing-container .price-card--header h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    color: #ffffff;
+    font-family: "Raleway", Helvetica, Arial, Lucida, sans-serif;
+    font-weight: 700;
+}
+
+#pricing-container .price-card--price {
+	text-align: center;
+	padding: 28px 0 6px 0;
+}
+
+#pricing-container .price-card--price-text {
+	font-size: 48px;
+}
+
+#pricing-container .price-card--price-number {
+	font-weight: 500;
+	opacity: 0.89;
+}
+
+.odometer div {
+	display: inline-block;
+}
+
+#pricing-container .price-card--price-number:before {
+	content: "$";
+	font-size: 24px;
+	top: -16px;
+	display: inline-block;
+	position: relative;
+}
+
+#pricing-container .price-card--price-number:after {
+	content: "/month";
+	font-size: 12px;
+	display: inline-block;
+	color: grey;
+}
+
+#pricing-container .price-card--price-conditions {
+	padding: 14px 0;
+	color: #888;
+	line-height: 1.5;
+}
+
+#pricing-container .price-card--onboarding-fee {
+	color: green;
+}
+
+#pricing-container .price-card--onboarding-fee.has-fee {
+	color: #888;
+}
+
+#pricing-container .price-card--cta {
+	padding: 0 20px 24px;
+	text-align: center;
+}
+
+#pricing-container .price-card--cta--button.btn {
+    min-width: 20px;
+    max-width: 183px;
+    margin: 0 auto;
+    background: #ededed;
+    color: #0b0b0b;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-image 0.3s ease;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none;
+}
+
+#pricing-container .price-card--features {
+	border-top: 1px solid #ddd;
+	padding: 16px 0 20px;
+}
+
+#pricing-container ul.price-card--features--list {
+	padding: 0 32px;
+	list-style: none;
+	margin: 0;
+}
+
+#pricing-container li.price-card--features--item {
+	margin: 8px 0;
+	padding-left: 8px;
+	line-height: 1.5;
+	position: relative;
+}
+
+#pricing-container
+	li.price-card--features--item:not(.features-disabled):before {
+	content: "✓";
+	color: green;
+	display: block;
+	position: absolute;
+	left: -8px;
+}
+
+#pricing-container .price-card--mobile-features-toggle {
+	text-align: center;
+	border-top: 1px solid #ddd;
+	margin: 24px 0 0;
+	padding: 16px 0;
+	cursor: pointer;
+	display: none;
+	color: green;
+}
+
+#pricing-container .price-card--mobile-features-toggle:after {
+	content: "Show All Features ▾";
+}
+#pricing-container .price-card--mobile-features-toggle.hideall:after {
+	content: "Hide Features ▴";
+}
+
+
+#pricing-container .price-card--hero {
+	margin: -38px 6px 0;
+	z-index: 10;
+}
+#pricing-container .price-card--hero-text {
+    background-color: #042a57;
+    height: 30px;
+    outline: 3px solid #d4dbe2;
+    position: absolute;
+    border: 2px solid #042a57;
+    top: -15px;
+    right: 8px;
+    width: 151px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f6b172;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+#pricing-container .only-yearly {
+	position: relative;
+}
+
+#pricing-container .only-yearly .price-card--price-number {
+	transition: opacity 0.2s;
+}
+
+#pricing-container .only-yearly .only-yearly--text {
+	position: absolute;
+	top: -0.2em;
+	left: 0;
+	right: 0;
+	display: none;
+}
+#pricing-container .only-yearly .only-yearly--text span {
+	font-size: 14px;
+}
+
+#pricing-container .only-yearly.if-monthly .price-card--price-number {
+	opacity: 0;
+}
+
+#pricing-container .only-yearly.if-monthly .only-yearly--text {
+	display: block;
+}
+
+
+#pricing-switch {
+    margin: 80px auto 100px;
+    text-align: center;
+    line-height: 1.4;
+    position: relative;
+}
+
+#pricing-switch .switch-label {
+	display: inline-block;
+	width: 200px;
+	text-align: center;
+	opacity: 0.4;
+	font-size: 16px;
+	cursor: pointer;
+	padding: 0 20px;
+}
+
+#pricing-switch .switch-label .save-money {
+	color: #4caf50;
+	font-style: italic;
+	padding-left: 8px;
+}
+#pricing-switch .save-money--mobile {
+	color: #4caf50;
+	font-style: italic;
+	padding-top: 22px;
+	display: none;
+}
+
+#pricing-switch .switch-label.active {
+	font-size: 18px;
+    color: #042a57;
+	opacity: 1;
+}
+#pricing-switch .switch-label-monthly {
+	text-align: right;
+    color: #042a57;
+}
+#pricing-switch .switch-label-yearly {
+	text-align: left;
+    color: #042a57;
+}
+
+#pricing-switch .switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	vertical-align: -50%;
+	margin: 0;
+}
+
+#pricing-switch .switch input {
+	display: none;
+}
+
+#pricing-switch .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #50af50;
+	border-radius: 34px;
+	-webkit-transition: 0.1s;
+	transition: 0.1s;
+}
+
+#pricing-switch .slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	border-radius: 50%;
+	-webkit-transition: 0.1s;
+	transition: 0.1s;
+}
+
+#pricing-switch input:focus + .slider {
+	box-shadow: 0 0 1px #2196f3;
+}
+
+#pricing-switch input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+@media (max-width: 767px) {
+}
+
+@media (max-width: 1280px) {
+	#pricing-container .price-card--price-text {
+		font-size: 32px;
+	}
+	#pricing-container .price-card--price-number:before {
+		top: -10px;
+		font-size: 18px;
+	}
+}
+
+@media (min-width: 981px) {
+	#pricing-container .price-card--features {
+		display: block !important;
+	}
+}
+
+@media (max-width: 980px) {
+	#pricing-cards {
+		display: block;
+		padding: 0 24px;
+	}
+	#pricing-container .price-card {
+		max-width: 360px;
+		margin: 0 auto 48px;
+	}
+	#pricing-container .price-card:hover {
+		transform: none;
+	}
+	#pricing-container .price-card-full-width {
+		display: block;
+	}
+	#pricing-container .price-card-full-width .price-card--features--list {
+		columns: 1;
+	}
+	#pricing-container .price-card--price {
+		padding: 28px 0 0;
+	}
+	#pricing-container .price-card--features {
+		display: none;
+		margin: 26px 0 0 0;
+		padding-bottom: 0;
+	}
+	#pricing-container ul.price-card--features--list {
+		max-width: 250px;
+		margin: 0 auto;
+	}
+	#pricing-container li.price-card--features--item.features-disabled {
+		display: none;
+	}
+	#pricing-container .price-card--mobile-features-toggle {
+		display: block;
+	}
+
+	#pricing-switch {
+		margin: 26px 0 52px;
+	}
+	#pricing-switch .switch-label {
+		display: inline-block;
+		width: auto;
+		font-size: 15px;
+	}
+	#pricing-switch .switch-label.active {
+		font-size: 16px;
+	}
+	#pricing-switch .switch-label .save-money {
+		display: none;
+	}
+	#pricing-switch .save-money--mobile {
+		display: block;
+	}
+}
+
+@media (max-width: 480px) {
+	#pricing-container .price-card {
+		max-width: 360px;
+		margin: 0 auto 36px;
+	}
+
+	#pricing-switch {
+		margin: 26px 0 36px;
+	}
+}
+.odometer.odometer-auto-theme,
+.odometer.odometer-theme-default {
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+	position: relative;
+}
+.odometer.odometer-auto-theme .odometer-digit,
+.odometer.odometer-theme-default .odometer-digit {
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+	position: relative;
+}
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-spacer,
+.odometer.odometer-theme-default .odometer-digit .odometer-digit-spacer {
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+	visibility: hidden;
+}
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner,
+.odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
+	text-align: left;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+.odometer.odometer-auto-theme .odometer-digit .odometer-ribbon,
+.odometer.odometer-theme-default .odometer-digit .odometer-ribbon {
+	display: block;
+}
+.odometer.odometer-auto-theme .odometer-digit .odometer-ribbon-inner,
+.odometer.odometer-theme-default .odometer-digit .odometer-ribbon-inner {
+	display: block;
+	-webkit-backface-visibility: hidden;
+}
+.odometer.odometer-auto-theme .odometer-digit .odometer-value,
+.odometer.odometer-theme-default .odometer-digit .odometer-value {
+	display: block;
+	-webkit-transform: translateZ(0);
+}
+.odometer.odometer-auto-theme
+	.odometer-digit
+	.odometer-value.odometer-last-value,
+.odometer.odometer-theme-default
+	.odometer-digit
+	.odometer-value.odometer-last-value {
+	position: absolute;
+}
+.odometer.odometer-auto-theme.odometer-animating-up .odometer-ribbon-inner,
+.odometer.odometer-theme-default.odometer-animating-up .odometer-ribbon-inner {
+	-webkit-transition: -webkit-transform 2s;
+	-moz-transition: -moz-transform 2s;
+	-ms-transition: -ms-transform 2s;
+	-o-transition: -o-transform 2s;
+	transition: transform 2s;
+}
+.odometer.odometer-auto-theme.odometer-animating-up.odometer-animating
+	.odometer-ribbon-inner,
+.odometer.odometer-theme-default.odometer-animating-up.odometer-animating
+	.odometer-ribbon-inner {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+.odometer.odometer-auto-theme.odometer-animating-down .odometer-ribbon-inner,
+.odometer.odometer-theme-default.odometer-animating-down
+	.odometer-ribbon-inner {
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+.odometer.odometer-auto-theme.odometer-animating-down.odometer-animating
+	.odometer-ribbon-inner,
+.odometer.odometer-theme-default.odometer-animating-down.odometer-animating
+	.odometer-ribbon-inner {
+	-webkit-transition: -webkit-transform 2s;
+	-moz-transition: -moz-transform 2s;
+	-ms-transition: -ms-transform 2s;
+	-o-transition: -o-transform 2s;
+	transition: transform 2s;
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
+	transform: translateY(0);
+}
+
+.odometer.odometer-auto-theme,
+.odometer.odometer-theme-default {
+	font-family: "Helvetica Neue", sans-serif;
+	line-height: 1.1em;
+}
+.odometer.odometer-auto-theme .odometer-value,
+.odometer.odometer-theme-default .odometer-value {
+	text-align: center;
+}
+
+.odometer.odometer-auto-theme.odometer-animating-up .odometer-ribbon-inner,
+.odometer.odometer-theme-minimal.odometer-animating-up .odometer-ribbon-inner,
+.odometer.odometer-auto-theme.odometer-animating-down.odometer-animating
+	.odometer-ribbon-inner,
+.odometer.odometer-theme-minimal.odometer-animating-down.odometer-animating
+	.odometer-ribbon-inner {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	-ms-transition: -ms-transform 0.4s;
+	-o-transition: -o-transform 0.4s;
+	transition: transform 0.4s;
+	will-change: auto;
+}
